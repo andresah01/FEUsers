@@ -1,0 +1,23 @@
+<form [formGroup]="formAddUser" >
+    <div class="mb-3">
+      <label for="user" class="form-label">Username</label>
+      <input formControlName='user' type="input" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input formControlName='firstName' type="input" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="secondName" class="form-label">Second Name</label>
+        <input formControlName='secondName' type="input" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input formControlName='lastName' type="input" class="form-control">
+    </div>
+    <div class="container text-center">
+        <button class="btn btn-second" routerLink="/">Back</button>
+        <button *ngIf="formAddUser.get('id')?.value === ''" class="btn btn-primary" name="add" (click)="add()">Submit</button>
+        <button *ngIf="formAddUser.get('id')?.value !== ''" class="btn btn-primary" name="update" (click)="update()">Update</button>
+    </div>
+</form>
